@@ -33,7 +33,6 @@ body {
     margin-bottom: 20px;
 }
 
-
 #container section.viewTableIMC {
     display: flex;
     gap: 40px;
@@ -41,38 +40,28 @@ body {
     align-items: center;
     margin: 0 auto 25px;
 }
-
 #container section.viewTableIMC .text ul {
     list-style: none;
 }
-
 #container section.viewTableIMC .text ul li {
     margin: 10px 0 0;
 }
 
+/* form */
 form {
     width: 100%;
     display: flex;
     gap: 5px;
     flex-direction: column;
 }
-
-input {
-    padding: 20px 10px;
-    display: block;
-    height: 30px;
-    border: none;
-    border-radius: 6px;
-    background-color: #b2b1b161;
-}
-
-span {
+form label span {
     font-size: 11px;
     font-weight: bold;
     color: #535353;
 }
 
-button {
+/* button effects */
+form button {
     margin-top: 10px;
     font-size: 18px;
     padding: 15px 40px;
@@ -82,12 +71,13 @@ button {
     font-weight: bolder;
     color: white;
 }
-
-button:hover {
+form button:hover {
     cursor: pointer;
     transition: 0.2s;
     background-color: #00b1dc;
 }
+
+/* result */
 .writeIMC{
     margin: 0 auto ;
 }
@@ -106,32 +96,38 @@ p {
     color: red;
 }
 
-
 footer {
     display: block;
     text-align: center;
     text-decoration: none;
     padding: 20px 20px 10px;
 }
-
 a {
     text-decoration: none;
     color: white;
 }
-
 a:hover {
     transition: 200ms;
     color: #d4d4d4;
 }
 
+/* inputs effects */
+input {
+    padding: 20px 10px;
+    display: block;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+    background-color: #b2b1b161;
+}
 input::placeholder {
     color: rgb(62, 62, 62);
 }
-
 input:focus {
     /* Um contorno é uma linha que é desenhada em torno de elementos, FORA das fronteiras, para fazer o elemento "se destacar".
     (Um contorno é uma linha desenhada fora da borda do elemento.)
  */
     outline:2px solid #12b9df;
+
 
 }
