@@ -131,3 +131,33 @@ input:focus {
 
 
 }
+
+/* max: 600px para baixo, até 600px, ja o min-width seria do 600 pra cima ou seja quando atingir o mínimo de 600> ele começa ele muda(na sua largura minima>)  */
+@media(max-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    #container {
+        padding: 40px 20px 40px;
+        max-width: 350px;
+
+    }
+
+    #container section.viewTableIMC {
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        ;
+    }
+    #container section.viewTableIMC .text ul li {
+        line-height: 20px;
+    }
+}
+
+/* usamos o max quando queremos que ele só va ate tal tamanho
+usamos min quando queremos que ele parta de um caminho
+*/
