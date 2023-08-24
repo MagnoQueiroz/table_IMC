@@ -1,6 +1,8 @@
 const form = document.querySelector(".form");
+const result = document.querySelector(".writeIMC");
 
 form.addEventListener("submit", processAndExecuteIMC);
+
 function processAndExecuteIMC(event) {
     event.preventDefault();
 
@@ -8,14 +10,14 @@ function processAndExecuteIMC(event) {
 
     const weight = form.querySelector("#weight").value;
     const height = form.querySelector("#height").value;
-    const result = document.querySelector(".writeIMC");
     const calculateIMC = calculateImc(weight, height);
     const interpretedIMC = interpretedImc(calculateIMC);
     const getClass = getClassName(interpretedIMC);
+    const validate = validateImc(calculateIMC, getClass);
+    const helpOrNot = getHelpOrNot(interpretedIMC)
 
-    validateImc(calculateIMC);
+    if (validate != false) { result.innerHTML = `<p class=${getClass}>${helpOrNot}: seu Imc é ${calculateIMC} (${interpretedIMC})</p>`;}
 
-    result.innerHTML = `<p class=${getClass}>Seu Imc é ${calculateIMC} (${interpretedIMC})</p>`;
 }
 
 function getClassName(interpretedIMC) {
@@ -24,8 +26,8 @@ function getClassName(interpretedIMC) {
 
 function calculateImc(weight, height) {
     let imc = weight / height ** 2;
-    imc = imc.toFixed(2);
-    return Number(imc);
+    imc = Number(imc.toFixed(2));
+    return imc;
 }
 
 function interpretedImc(imc, result = null) {
@@ -39,15 +41,24 @@ function interpretedImc(imc, result = null) {
         result = `Obesidade grau I`;
     } else if (imc >= 35 || imc <= 39.9) {
         result = `Obesidade grau II`;
-    } else {
+    } else if (imc >= 40) {
         result = `Obesidade grau III`;
+    } else {
+        result = `valores inseridos inválidos`;
     }
-    return result ?? "valores desconhecidos";
+
+    return result;
 }
 
-function validateImc(calculateIMC) {
+function validateImc(calculateIMC, getClass) {
     if (isNaN(calculateIMC) == true) {
         alert("Invalid arguments");
+        result.innerHTML = `<p class="${getClass}">Dados Inválidos!!! tente novamente</p>`;
         return false;
     }
+}
+
+
+function getHelpOrNot(interpretedIMC) {
+    return "Peso normal" ? "Parabéns" : "Você precisa de ajuda profissional"
 }

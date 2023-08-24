@@ -17,10 +17,10 @@ body {
     color: black;
     background-color: #fff;
     max-width: 720px;
-    max-height: 620px ;
+    max-height: 615px ;
     padding: 40px;
     border-radius: 10px;
-    margin: 40px auto 0;
+    margin: 30px auto 0;
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -36,7 +36,9 @@ body {
 #container section.viewTableIMC {
     display: flex;
     gap: 40px;
-    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px;
 }
 
 #container section.viewTableIMC .text ul {
@@ -85,9 +87,12 @@ button:hover {
     transition: 0.2s;
     background-color: #00b1dc;
 }
-
+.writeIMC{
+    max-width: 355px;
+    margin: 0 auto ;
+}
 p {
-        text-align: center;
+    text-align: center;
     font-size: 19px;
     font-weight: bold;
 
@@ -106,7 +111,7 @@ footer {
     display: block;
     text-align: center;
     text-decoration: none;
-    padding: 20px;
+    padding: 20px 20px 10px;
 }
 
 a {
