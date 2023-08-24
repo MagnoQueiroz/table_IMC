@@ -14,14 +14,22 @@ function processAndExecuteIMC(event) {
     const interpretedIMC = interpretedImc(calculateIMC);
     const getClass = getClassName(interpretedIMC);
     const validate = validateImc(calculateIMC, getClass);
-    const helpOrNot = getHelpOrNot(interpretedIMC)
+    const helpOrNot = getHelpOrNot(interpretedIMC);
 
-    if (validate != false) { result.innerHTML = `<p class=${getClass}>${helpOrNot}: seu Imc é ${calculateIMC} (${interpretedIMC})</p>`;}
-
+    // se validate for verdadeiro executa se nao for nao executa
+    if (validate) {
+        // result.innerHTML = `<p class=${getClass}>${helpOrNot}: seu Imc é ${calculateIMC} (${interpretedIMC})</p>`;
+        setResult(
+            `${helpOrNot}: seu Imc é ${calculateIMC} (${interpretedIMC})`
+        );
+    }
 }
 
 function getClassName(interpretedIMC) {
-    return `Peso normal` === interpretedIMC ? "result" : "result-bad";
+    //return `Peso normal` === interpretedIMC ? "result" : "result-bad";
+    return `Peso normal` === interpretedIMC
+        ? result.classList.add("result")
+        : result.classList.add("result-bad");
 }
 
 function calculateImc(weight, height) {
@@ -53,12 +61,29 @@ function interpretedImc(imc, result = null) {
 function validateImc(calculateIMC, getClass) {
     if (isNaN(calculateIMC) == true) {
         alert("Invalid arguments");
-        result.innerHTML = `<p class="${getClass}">Dados Inválidos!!! tente novamente</p>`;
+        // result.innerHTML = `<p class="${getClass}">Dados Inválidos!!! tente novamente</p>`;
+        setResult("Dados Inválidos!!! tente novamente");
         return false;
     }
+    return true;
 }
 
 
 function getHelpOrNot(interpretedIMC) {
-    return "Peso normal" ===interpretedIMC ? "Parabéns" : "Você precisa de ajuda profissional"
+    return "Peso normal" === interpretedIMC ? "Parabéns" : "Você precisa de ajuda profissional"
 }
+
+function createParagraph() {
+    const p = document.createElement("p");
+    return p;
+}
+
+function setResult(msg) {
+    //reset content result after new execution
+    result.innerHTML = "";
+    const p = createParagraph();
+    //appendChild adiciona um elemento HTML dentro do pai.
+    result.appendChild(p);
+    p.innerHTML = msg;
+}
+
