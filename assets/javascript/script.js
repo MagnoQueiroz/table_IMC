@@ -58,7 +58,7 @@ function interpretedImc(imc, result = null) {
     return result;
 }
 
-function validateImc(calculateIMC, getClass) {
+function validateImc(calculateIMC) {
     if (isNaN(calculateIMC) == true) {
         alert("Invalid arguments");
         // result.innerHTML = `<p class="${getClass}">Dados Inválidos!!! tente novamente</p>`;
@@ -68,15 +68,16 @@ function validateImc(calculateIMC, getClass) {
     return true;
 }
 
-
 function getHelpOrNot(interpretedIMC) {
-    return "Peso normal" === interpretedIMC ? "Parabéns" : "Você precisa de ajuda profissional"
+    return "Peso normal" === interpretedIMC
+        ? "Parabéns"
+        : "Você precisa de ajuda profissional";
 }
 
-function createParagraph() {
-    const p = document.createElement("p");
-    return p;
-}
+// function createParagraph() {
+//     const p = document.createElement("p");
+//     return p;
+// }
 
 function setResult(msg) {
     //reset content result after new execution
@@ -87,3 +88,5 @@ function setResult(msg) {
     p.innerHTML = msg;
 }
 
+//this arrow function is used in the function expression
+const createParagraph = () => { return document.createElement("p"); };
