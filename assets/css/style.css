@@ -10,6 +10,7 @@ body {
     color: #fff;
     font-family: "Roboto", sans-serif;
     display: flex;
+    flex-direction: column;
 }
 
 #container {
@@ -98,4 +99,22 @@ p {
 .result-bad {
     margin-top: 20px;
     color: red;
+}
+
+
+footer {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    transition: 200ms;
+    color: #d4d4d4;
 }

@@ -18,7 +18,6 @@ function processAndExecuteIMC(event) {
     result.innerHTML = `<p class=${getClass}>Seu Imc é ${calculateIMC} (${interpretedIMC})</p>`;
     console.log(calculateIMC);
 
-
 }
 
 function getClassName(interpretedIMC) {
