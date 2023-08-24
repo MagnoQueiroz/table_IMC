@@ -44,7 +44,7 @@ body {
     list-style: none;
 }
 #container section.viewTableIMC .text ul li {
-    margin: 10px 0 0;
+    margin: 8px 0 0;
 }
 
 /* form */
@@ -153,9 +153,7 @@ input:focus {
         align-items: center;
         ;
     }
-    #container section.viewTableIMC .text ul li {
-        line-height: 20px;
-    }
+
 }
 
 /* usamos o max quando queremos que ele só va ate tal tamanho
