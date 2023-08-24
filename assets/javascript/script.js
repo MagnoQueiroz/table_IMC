@@ -22,32 +22,32 @@ function getClassName(interpretedIMC) {
     return `Peso normal` === interpretedIMC ? "result" : "result-bad";
 }
 
-    function calculateImc(weight, height) {
-        let imc = weight / height ** 2;
-        imc = imc.toFixed(2);
-        return Number(imc);
-    }
+function calculateImc(weight, height) {
+    let imc = weight / height ** 2;
+    imc = imc.toFixed(2);
+    return Number(imc);
+}
 
-    function interpretedImc(imc, result = null) {
-        if (imc < 18.5) {
-            result = `Abaixo do peso`;
-        } else if (imc >= 18.5 || imc <= 24.9) {
-            result = `Peso normal`;
-        } else if (imc >= 25 || imc <= 29.9) {
-            result = `Sobrepeso`;
-        } else if (imc >= 30 || imc <= 34.9) {
-            result = `Obesidade grau I`;
-        } else if (imc >= 35 || imc <= 39.9) {
-            result = `Obesidade grau II`;
-        } else {
-            result = `Obesidade grau III`;
-        }
-        return result ?? "valores desconhecidos";
+function interpretedImc(imc, result = null) {
+    if (imc < 18.5) {
+        result = `Abaixo do peso`;
+    } else if (imc >= 18.5 || imc <= 24.9) {
+        result = `Peso normal`;
+    } else if (imc >= 25 || imc <= 29.9) {
+        result = `Sobrepeso`;
+    } else if (imc >= 30 || imc <= 34.9) {
+        result = `Obesidade grau I`;
+    } else if (imc >= 35 || imc <= 39.9) {
+        result = `Obesidade grau II`;
+    } else {
+        result = `Obesidade grau III`;
     }
+    return result ?? "valores desconhecidos";
+}
 
-    function validateImc(calculateIMC) {
-        if (isNaN(calculateIMC) == true) {
-            alert("Invalid arguments");
-            return false;
-        }
+function validateImc(calculateIMC) {
+    if (isNaN(calculateIMC) == true) {
+        alert("Invalid arguments");
+        return false;
     }
+}
