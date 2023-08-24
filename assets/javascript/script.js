@@ -60,5 +60,5 @@ function validateImc(calculateIMC, getClass) {
 
 
 function getHelpOrNot(interpretedIMC) {
-    return "Peso normal" ? "Parabéns" : "Você precisa de ajuda profissional"
+    return "Peso normal" ===interpretedIMC ? "Parabéns" : "Você precisa de ajuda profissional"
 }

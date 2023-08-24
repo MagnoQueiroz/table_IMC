@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modelo</title>
-    <link rel="stylesheet" href="./assets/css/style.css" </head>
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="fav icon" href="./assets/img/Calculator.svg">
+</head>
 
 <body>
     <div id="container">
@@ -36,9 +38,9 @@
         </section>
         <form action="" class="form">
             <label for="weight">Peso<span>(Kg)</span>:</label>
-            <input type="text" id="weight">
+            <input type="text" id="weight" required placeholder="Peso em Quilograma">
             <label for="height">Altura<span>(M)</span>:</label>
-            <input type="text" id="height">
+            <input type="text" id="height" required placeholder="Altura em Metros">
             <button>Calcular IMC</button>
         </form>
         <div class="writeIMC">

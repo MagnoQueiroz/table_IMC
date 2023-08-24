@@ -16,7 +16,8 @@ body {
 #container {
     color: black;
     background-color: #fff;
-    max-width: 720px;
+    /* max-width: 720px; */
+    width: 385.97px;
     max-height: 615px ;
     padding: 40px;
     border-radius: 10px;
@@ -60,7 +61,7 @@ input {
     padding: 20px 10px;
     display: block;
     height: 30px;
-    border: 1px solid transparent;
+    border: none;
     border-radius: 6px;
     background-color: #b2b1b161;
 }
@@ -88,21 +89,20 @@ button:hover {
     background-color: #00b1dc;
 }
 .writeIMC{
-    max-width: 355px;
     margin: 0 auto ;
 }
 p {
+    margin-top: 20px;
+
     text-align: center;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
 
 }
 .result {
-    margin-top: 20px;
     color: #13ff0f;
 }
 .result-bad {
-    margin-top: 20px;
     color: red;
 }
 
@@ -122,4 +122,16 @@ a {
 a:hover {
     transition: 200ms;
     color: #d4d4d4;
+}
+
+input::placeholder {
+    color: rgb(62, 62, 62);
+}
+
+input:focus {
+    /* Um contorno é uma linha que é desenhada em torno de elementos, FORA das fronteiras, para fazer o elemento "se destacar".
+    (Um contorno é uma linha desenhada fora da borda do elemento.)
+ */
+    outline:2px solid #12b9df;
+
 }
