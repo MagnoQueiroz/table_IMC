@@ -102,7 +102,6 @@ function showDate() {
     const date = getDate();
     writeDate.appendChild(showP);
     showP.innerHTML = `${date.getFullYear()}`;
-    console.log(date.getFullYear());
 }
 
 showDate();
