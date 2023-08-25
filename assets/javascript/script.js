@@ -1,6 +1,6 @@
 const form = document.querySelector(".form");
 const result = document.querySelector(".writeIMC");
-
+const writeDate = document.querySelector(".date");
 form.addEventListener("submit", processAndExecuteIMC);
 
 function processAndExecuteIMC(event) {
@@ -89,4 +89,20 @@ function setResult(msg) {
 }
 
 //this arrow function is used in the function expression
-const createParagraph = () => { return document.createElement("p"); };
+const createParagraph = () => {
+    return document.createElement("p");
+};
+
+const getDate = () => {
+    return (date = new Date(2023, 7));
+};
+
+function showDate() {
+    const showP = createParagraph();
+    const date = getDate();
+    writeDate.appendChild(showP);
+    showP.innerHTML = `${date.getFullYear()}`;
+    console.log(date.getFullYear());
+}
+
+showDate();
