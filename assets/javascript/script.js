@@ -26,14 +26,14 @@ function processAndExecuteIMC(event) {
 }
 
 function getClassName(interpretedIMC) {
-    //return `Peso normal` === interpretedIMC ? "result" : "result-bad";
+    // return `Peso normal` === interpretedIMC ? "result" : "result-bad";
     return `Peso normal` === interpretedIMC
         ? result.classList.add("result")
         : result.classList.add("result-bad");
 }
 
 function calculateImc(weight, height) {
-    let imc = weight / height ** 2;
+    let imc = weight / (height/100) ** 2;
     imc = Number(imc.toFixed(2));
     return imc;
 }
