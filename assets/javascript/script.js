@@ -10,7 +10,7 @@ function processAndExecuteIMC(event) {
 
     const weight = form.querySelector("#weight").value;
     const height = form.querySelector("#height").value;
-    
+
     const calculateIMC = calculateImc(weight, height);
     const interpretedIMC = interpretedImc(calculateIMC);
     const getClass = getClassName(interpretedIMC);
@@ -34,7 +34,14 @@ function getClassName(interpretedIMC) {
 }
 
 function calculateImc(weight, height) {
-    let imc = weight / (height/100) ** 2;
+    let imc;
+    if (height >= 100) {
+        imc = weight / (height / 100) ** 2;
+    } else {
+        height = height * 100
+        imc = weight / (height / 100) ** 2;
+    }
+
     imc = Number(imc.toFixed(2));
     return imc;
 }
