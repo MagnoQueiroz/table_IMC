@@ -3,6 +3,11 @@
 <p>Projeto feito em javascript, com manipulação de DOM.</p>
 <p>A calculadora efetua o calculo de IMC a partir do peso e altura do usuário.</p>
 
+## Linguagens: 
+- HTML5
+- CSS3
+- JAVASCRIPT
+  
 ## Desktop and mobile version:
 
 <div align="center">
